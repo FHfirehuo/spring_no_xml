@@ -4,6 +4,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.eiecc.fire.spring_4_no_xml.email.domain.Order;
 import com.eiecc.fire.spring_4_no_xml.email.service.SimpleOrderManager;
+import com.eiecc.fire.spring_4_no_xml.email.service.SimpleRegistrationService;
 
 public class Main {
 	
@@ -19,7 +20,10 @@ public class Main {
 		order.setLastName("yi");
 		order.setId(1);
 		order.setMessage("hello world lalala");
-		manager.placeOrder(order);
+		//manager.placeOrder4(order);
+		
+		SimpleRegistrationService registrationService =  context.getBean(SimpleRegistrationService.class);
+		registrationService.register(order);
 		context.close();
 	}
 

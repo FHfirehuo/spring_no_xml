@@ -10,6 +10,11 @@ public class DemoListener implements ApplicationListener<DemoEvent> { //实现Ap
 	public void onApplicationEvent(DemoEvent demoEvent) { //使用onApplicationEvent方法对消息进行处理
 		System.out.println("++++++");
 		String msg = demoEvent.getMsg();
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			
+		}
 		System.out.println("我（bean-demoListener）接收到bean-demopublisher发布的消息："+msg);
 		
 	}
