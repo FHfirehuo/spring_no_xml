@@ -19,7 +19,7 @@ import com.eiecc.fire.spring_4_no_xml.profile.DemoBean;
 import com.eiecc.fire.spring_4_no_xml.profile.ProfileConfig;
 
 /***
- * 
+ * 不提供web服务支持，现在仅提供参考，最终配置请看mvc下
  * @author fire
  *
  */
