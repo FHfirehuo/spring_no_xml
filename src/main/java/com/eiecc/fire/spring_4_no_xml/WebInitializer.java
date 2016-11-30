@@ -23,9 +23,9 @@ import com.eiecc.fire.spring_4_no_xml.profile.ProfileConfig;
  * @author fire
  *
  */
-public class WebInitializer implements WebApplicationInitializer{
+public class WebInitializer { //implements WebApplicationInitializer
 
-	@Override
+
 	public void onStartup(ServletContext servletContext) throws ServletException {
 		
 		///这种是可以得
