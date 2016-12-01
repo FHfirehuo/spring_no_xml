@@ -13,6 +13,13 @@
 
 	<dependencies>
 
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+
 		<!-- spring MVC -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -28,8 +35,12 @@
 			<scope>provided</scope> <!--期望JDK、容器或使用者会提供这个依赖 -->
 		</dependency>
 
-		<!-- <dependency> <groupId>javax.servlet.jsp</groupId> <artifactId>jsp-api</artifactId> 
-			<version>2.2.1-b03</version> <scope>provided</scope> </dependency> -->
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.2.1-b03</version>
+			<scope>provided</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -102,15 +113,15 @@
 		</dependency>
 
 		<!--对 json 和 xml 格式的支持 -->
-		<!-- <dependency> <groupId>com.fasterxml.jackson.dataformat</groupId> <artifactId>jackson-dataformat-xml</artifactId> 
-			<version>2.7.5</version> </dependency> -->
-
-		<!--仅对json格式的支持 -->
 		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
 			<version>2.7.5</version>
 		</dependency>
+
+		<!--仅对json格式的支持 -->
+		<!-- <dependency> <groupId>com.fasterxml.jackson.core</groupId> <artifactId>jackson-databind</artifactId> 
+			<version>2.7.5</version> </dependency> -->
 
 		<!-- 简化文件操作，将file转换为字符串 -->
 		<dependency>

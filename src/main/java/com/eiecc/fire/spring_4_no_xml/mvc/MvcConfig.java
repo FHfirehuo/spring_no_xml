@@ -1,4 +1,4 @@
-package com.eiecc.fire.spring_4_no_xml.mvc.web;
+package com.eiecc.fire.spring_4_no_xml.mvc;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,8 +14,8 @@ import com.eiecc.fire.spring_4_no_xml.interceptor.RequestTimeInterceptor;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan
-public class WebConfig extends WebMvcConfigurerAdapter {
+@ComponentScan("com.eiecc.fire.spring_4_no_xml.mvc")
+public class MvcConfig extends WebMvcConfigurerAdapter {
 
 	@Bean
 	public InternalResourceViewResolver viewResolver() {
