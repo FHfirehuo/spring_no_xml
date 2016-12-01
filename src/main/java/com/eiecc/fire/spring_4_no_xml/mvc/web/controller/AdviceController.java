@@ -27,8 +27,7 @@ public class AdviceController {
 
 	@RequestMapping("/advice/error")
 	public String getSomeTing(@ModelAttribute("msg") String msg, DemoObj obj) {
-		System.out.println(obj.toString());
-		System.out.println();
+
 		throw new IllegalArgumentException("非常抱歉:" + msg);
 	}
 }
