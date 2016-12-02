@@ -17,7 +17,9 @@
 		if (!!window.EventSource) {
 			var source = new EventSource('push');
 			s = '';
+			
 			source.addEventListener('message', function(e) {
+				console.log("message");
 				s += e.data + "<br/>";
 				$('#msgFrompPush').html(s);
 			});
@@ -31,7 +33,7 @@
 				if (e.currentTarget.readyState == EventSource.CLOSED) {
 					console.log("链接关闭");
 				} else {
-					console.log(e.currentTarget.readyState );
+					console.log('error' +e.currentTarget.readyState );
 				}
 			}, false);
 
