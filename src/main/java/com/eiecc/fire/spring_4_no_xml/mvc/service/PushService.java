@@ -1,4 +1,4 @@
-package com.eiecc.fire.spring_4_no_xml.mvc;
+package com.eiecc.fire.spring_4_no_xml.mvc.service;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
