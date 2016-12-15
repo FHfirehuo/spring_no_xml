@@ -68,6 +68,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 
+		registry.addViewController("/").setViewName("fireindex");
 		registry.addViewController("/converter").setViewName("converter");
 		registry.addViewController("/sse").setViewName("sse");
 		registry.addViewController("/async").setViewName("async");
