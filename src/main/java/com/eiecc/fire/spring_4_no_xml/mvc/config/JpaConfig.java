@@ -14,7 +14,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import com.eiecc.fire.spring_4_no_xml.mvc.data.FireDataSource;
 
 @Configuration
-@EnableJpaRepositories
+@EnableJpaRepositories("com.eiecc.fire.spring_4_no_xml.mvc.data.repository")//WebInitializer实现WebApplicationInitializer接口必须加上，不然找到包
 public class JpaConfig {
 
 	@Autowired

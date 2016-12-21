@@ -8,6 +8,7 @@ import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
+import com.eiecc.fire.spring_4_no_xml.mvc.config.JpaConfig;
 import com.eiecc.fire.spring_4_no_xml.mvc.config.WebSocketConfig;
 import com.eiecc.fire.spring_4_no_xml.mvc.web.MvcConfig;
 
@@ -23,7 +24,7 @@ public class WebInitializer implements WebApplicationInitializer {
 
 		AnnotationConfigWebApplicationContext webApplicationContext = new AnnotationConfigWebApplicationContext();
 
-		webApplicationContext.register(MvcConfig.class, WebSocketConfig.class);
+		webApplicationContext.register(MvcConfig.class, WebSocketConfig.class, JpaConfig.class);
 		webApplicationContext.setServletContext(servletContext);
 
 		Dynamic servlet = servletContext.addServlet("dispatcher", new DispatcherServlet(webApplicationContext));

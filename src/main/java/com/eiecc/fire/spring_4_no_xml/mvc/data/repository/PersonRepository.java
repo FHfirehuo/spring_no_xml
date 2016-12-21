@@ -77,18 +77,13 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 	Page<Person> findByName(String name, Pageable pageable);
 
 	/***
-	 * 排序分页(未测试)
-	 * @param name
-	 * @param sort
-	 * @param pageable
-	 * @return
-	 * 应该是错误的，请看Pageable的实现类PageRequest
+	 * 这样写法是错误的。 Method must not have Pageable *and* Sort parameter. Use sorting
+	 * capabilities on Pageble instead! Offending method:
 	 */
-	Page<Person> findByName(String name, Sort sort, Pageable pageable);
-	
+	//Page<Person> findByName(String name, Sort sort, Pageable pageable);
+
 	/***
-	 * (未测试)
-	 * 应该是错误的，请看Pageable的实现类PageRequest
+	 * 错误的，请看Pageable的实现类PageRequest
 	 */
-	Page<Person> findAll(String name, Sort sort, Pageable pageable);
+	//Page<Person> findAll(String name, Sort sort, Pageable pageable);
 }
