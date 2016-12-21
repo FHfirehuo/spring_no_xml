@@ -52,4 +52,13 @@ public class PersonService {
 		 */
 		Page<Person> people5 = personRepository.findAll(pageable);
 	}
+	
+	public void java8Stream() {
+		//流可能会封装基础数据存储特定资源，因此必须在使用后关闭。 您可以使用close（）方法或使用Java 7 try-with-resources块手动关闭流。
+		//try (Stream<User> stream = repository.findAllByCustomQueryAndStream()) {
+		//	  stream.forEach(…);
+		//	}
+		
+		//不是所有的Spring Data模块都支持Stream <T>作为返回类型。
+	}
 }

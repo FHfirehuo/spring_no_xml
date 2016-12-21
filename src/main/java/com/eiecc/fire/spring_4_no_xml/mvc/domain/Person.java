@@ -13,6 +13,27 @@ public class Person extends AbstractPersistable<Long>{
 	private static final long serialVersionUID = 3763538677218067454L;
 
 	private String name;
+	
+	private int age;
+	
+	private String email;
+	
+	public int getAge() {
+		return age;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
 	private String address;
 
 	public Person() {

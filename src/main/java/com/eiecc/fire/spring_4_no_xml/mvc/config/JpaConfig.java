@@ -14,17 +14,19 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import com.eiecc.fire.spring_4_no_xml.mvc.data.FireDataSource;
 
 @Configuration
-@EnableJpaRepositories("com.eiecc.fire.spring_4_no_xml.mvc.data.repository")//WebInitializer实现WebApplicationInitializer接口必须加上，不然找到包
+@EnableJpaRepositories("com.eiecc.fire.spring_4_no_xml.mvc.data.repository") // WebInitializer实现WebApplicationInitializer接口必须加上，不然找到包
 public class JpaConfig {
 
 	@Autowired
 	@Qualifier("CUDDataSource")
 	private FireDataSource fireDataSource;
 
-	/*public JpaConfig(FireDataSource fireDataSource) {
-		this.fireDataSource = fireDataSource;
-	}*/
-
+	/***
+	 * 重要的是直接创建LocalContainerEntityManagerFactoryBean而不是EntityManagerFactory，
+	 * 因为前者除了简单地创建EntityManagerFactory之外也参与异常翻译机制。
+	 * 
+	 * @return
+	 */
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
@@ -52,20 +54,5 @@ public class JpaConfig {
 		return em;
 
 	}
-
-	// @Bean
-	// public PlatformTransactionManager transactionManager(EntityManagerFactory
-	// emf) {
-	// JpaTransactionManager transactionManager = new JpaTransactionManager();
-	// transactionManager.setEntityManagerFactory(emf);
-	//
-	// return transactionManager;
-	// }
-	//
-	// @Bean
-	// public PersistenceExceptionTranslationPostProcessor
-	// exceptionTranslation() {
-	// return new PersistenceExceptionTranslationPostProcessor();
-	// }
 
 }
