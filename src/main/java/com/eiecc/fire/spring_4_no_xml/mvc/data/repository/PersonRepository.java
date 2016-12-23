@@ -1,7 +1,6 @@
 package com.eiecc.fire.spring_4_no_xml.mvc.data.repository;
 
 import java.util.List;
-import java.util.concurrent.Future;
 
 import javax.transaction.Transactional;
 

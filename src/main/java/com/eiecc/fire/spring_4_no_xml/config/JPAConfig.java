@@ -9,6 +9,9 @@ import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
+import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
+import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -90,4 +93,18 @@ public class JPAConfig {
 	 * PersistenceExceptionTranslationPostProcessor(); }
 	 */
 
+	//Spring Data REST在根URI“/”处提供REST资源。 有多种方法可以更改基本路径
+	@Bean
+	public RepositoryRestConfigurer repositoryRestConfigurer() {
+
+		return new RepositoryRestConfigurerAdapter() {
+
+			@Override
+			public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
+				config.setBasePath("/api");
+			}
+		};
+	}
+	
+	//或者，只需将RepositoryRestConfigurer的自定义实现注册为Spring bean，并确保它通过组件扫描获取。见CustomizedRestMvcConfig
 }
